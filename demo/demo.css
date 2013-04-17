@@ -1,23 +1,32 @@
 body { font-family: sans-serif; margin: 0; padding: 0; }
 
-.main { margin: 0 auto; min-height: 5000px; padding: 0; position: relative; }
-.main .demos { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-shadow: 0 0 0 3px black; -moz-box-shadow: 0 0 0 3px black; box-shadow: 0 0 0 3px black; display: block; height: 700px; margin: 0; padding: 0; position: relative; width: 100%; }
-.main .demos h1, .main .demos p { margin-top: 0; }
-.main .demos h1:first-child, .main .demos p:first-child { padding: 50px 0 0 0; }
-.main .demos a { color: black; }
-.main .demos code { font-size: 14px; width: 100%; }
-.main .demos.buffer { padding: 50px 0; }
-.main .demos.unsticky { background: #E5EAAA; }
-.main .demos.another-element { background: #FF776F; }
-.main .demos.flush { background: #C33B49; }
-.main .demos.flush p, .main .demos.flush code { color: white; }
-.main .demos.buffer { background: #2C2141; }
-.main .demos.buffer p, .main .demos.buffer code { color: white; }
-.main .demos.buffer.stuck { top: 50px; }
-.main .demos.css { background: white; height: 500px; }
-.main .demos .sticky { background: rgba(0, 0, 0, 0.3); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 250px; margin: 0 auto; padding: 0 20px; position: relative; width: 500px; vertical-align: middle; }
-.main .demos .sticky.stuck { left: 50%; margin: 0 0 0 -250px; position: fixed; top: 0; }
-.main .demos .sticky.regular { background: none; }
-.main .demos .sticky.flush p, .main .demos .sticky.flush code { color: white; }
-.main .demos .sticky.buffer p, .main .demos .sticky.buffer code { color: white; }
-.main .demos .sticky.buffer.stuck { top: 50px; }
+.main { margin: 0 auto; height: 4200px; padding: 0; position: relative; }
+
+.demos { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: block; height: 700px; margin: 0; padding: 0; position: relative; width: 100%; }
+.clear .demos { -webkit-box-shadow: 0 0 0 3px black; -moz-box-shadow: 0 0 0 3px black; box-shadow: 0 0 0 3px black; }
+.demos h1, .demos p { margin-top: 0; }
+.demos h1:first-child, .demos p:first-child { padding: 50px 0 0 0; }
+.demos a { color: black; }
+.demos code { font-size: 14px; width: 100%; }
+.demos.buffer { padding: 50px 0; }
+.demos.unsticky { background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e5eaaa), color-stop(100%, #ff776f)); background: -webkit-linear-gradient(top, #e5eaaa, #ff776f); background: -moz-linear-gradient(top, #e5eaaa, #ff776f); background: -o-linear-gradient(top, #e5eaaa, #ff776f); background: linear-gradient(top, #e5eaaa, #ff776f); }
+.clear .demos.unsticky { background: #E5EAAA; }
+.demos.another-element { background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff776f), color-stop(100%, #c33b49)); background: -webkit-linear-gradient(top, #ff776f, #c33b49); background: -moz-linear-gradient(top, #ff776f, #c33b49); background: -o-linear-gradient(top, #ff776f, #c33b49); background: linear-gradient(top, #ff776f, #c33b49); }
+.clear .demos.another-element { background: #FF776F; }
+.demos.flush { background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c33b49), color-stop(100%, #2c2141)); background: -webkit-linear-gradient(top, #c33b49, #2c2141); background: -moz-linear-gradient(top, #c33b49, #2c2141); background: -o-linear-gradient(top, #c33b49, #2c2141); background: linear-gradient(top, #c33b49, #2c2141); }
+.clear .demos.flush { background: #C33B49; }
+.demos.flush p, .demos.flush code { color: white; }
+.demos.buffer { background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2c2141), color-stop(100%, #ffffff)); background: -webkit-linear-gradient(top, #2c2141, #ffffff); background: -moz-linear-gradient(top, #2c2141, #ffffff); background: -o-linear-gradient(top, #2c2141, #ffffff); background: linear-gradient(top, #2c2141, #ffffff); }
+.clear .demos.buffer { background: #2C2141; }
+.demos.buffer p, .demos.buffer code { color: white; }
+.demos.buffer.stuck { top: 50px; }
+.demos.css { background: white; height: 500px; }
+.demos .sticky { background: rgba(0, 0, 0, 0.3); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 250px; margin: 0 auto; padding: 0 20px; position: relative; width: 500px; vertical-align: middle; }
+.demos .sticky.stuck { left: 50%; margin: 0 0 0 -250px; position: fixed; top: 0; }
+.demos .sticky.regular { background: none; }
+.demos .sticky.flush p, .demos .sticky.flush code { color: white; }
+.demos .sticky.buffer p, .demos .sticky.buffer code { color: white; }
+.demos .sticky.buffer.stuck { top: 50px; }
+
+.control { height: 300px; font-size: 11px; margin: 0 auto; width: 500px; text-align: center; }
+.control input { margin-right: 10px; }

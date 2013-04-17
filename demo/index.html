@@ -13,6 +13,7 @@
 					<h2>jQuery plugin for making things stick</h2>
 					<p>Elements get stuck as you scroll. A regular call to Sticky will keep the element fixed as long as your scrollTop is greater than its initial offset on the page.</p>
 					<pre><code>$(element).Sticky();</code></pre>
+					<p>Scroll down further for some more examples.</p>
 				</div>
 			</div>
 			<div class="demos unsticky">
@@ -51,6 +52,9 @@ $(element).Sticky({ bottom : true,
 				</div>
 			</div>
 		</div>
+		<div class="control">
+			<input type="checkbox" id="show"><label for="show">Show container element boxes more clearly</label>
+		</div>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="../sticky.js"></script>
 		<script>
@@ -59,6 +63,10 @@ $(element).Sticky({ bottom : true,
 		$('.sticky.unsticky-two').Sticky({ bottom : true, reference : $('.another-element') });
 		$('.sticky.flush').Sticky({ bottom : true, reference : $('.demos.flush') });
 		$('.sticky.buffer').Sticky({ bottom : true, reference : $('.demos.buffer'), buffer : 50 });
+		$('.sticky.css').Sticky({ bottom : true, reference : $('.demos.css') });
+		
+		$('#show').on('change', function () { $('.main').toggleClass('clear'); });
+		
 		</script>
 	</body>
 </html>

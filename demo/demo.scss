@@ -8,51 +8,121 @@ body {
 
 .main {
 	margin: 0 auto;
-	min-height: 5000px;
+	height: 4200px;
 	padding: 0;
 	position: relative;
+}
 	
-	.demos {
-		@include box-sizing(border-box);
+.demos {
+	@include box-sizing(border-box);
+	display: block;
+	height: 700px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	
+	.clear & {
 		@include box-shadow(0 0 0 3px black);
-		display: block;
-		height: 700px;
-		margin: 0;
-		padding: 0;
-		position: relative;
+	}
+	
+	h1,
+	p {
+		margin-top: 0;
+		&:first-child {
+			padding: 50px 0 0 0;
+		}
+	}
+	
+	a {
+		color: black;
+	}
+	
+	code {
+		font-size: 14px;
 		width: 100%;
+	}
+			
+	&.buffer {
+		padding: 50px 0;
+	}
+	
+	&.unsticky {
+		@include background(linear-gradient(top, #E5EAAA #FF776F));
 		
-		h1,
-		p {
-			margin-top: 0;
-			&:first-child {
-				padding: 50px 0 0 0;
-			}
-		}
-		
-		a {
-			color: black;
-		}
-		
-		code {
-			font-size: 14px;
-			width: 100%;
-		}
-				
-		&.buffer {
-			padding: 50px 0;
-		}
-		
-		&.unsticky {
+		.clear & {
 			background: #E5EAAA;
 		}
+	}
+	
+	&.another-element {
+		@include background(linear-gradient(top, #FF776F #C33B49));
 		
-		&.another-element {
+		.clear & {
 			background: #FF776F;
+		}		
+	}
+	
+	&.flush {
+		@include background(linear-gradient(top, #C33B49 #2C2141));
+		
+		.clear & {
+			background: #C33B49;
+		}
+		
+		p,
+		code {
+			color: white;
+		}
+		
+	}
+	
+	&.buffer {
+
+		@include background(linear-gradient(top, #2C2141 white));
+		
+		.clear & {
+			background: #2C2141;
+		}
+		
+		p,
+		code {
+			color: white;
+		}
+		
+		&.stuck {
+			top: 50px;
+		}
+		
+	}
+	
+	&.css {
+		background: white;
+		height: 500px;
+	}
+	
+	.sticky {
+		@include background(rgba(0,0,0,0.3));
+		@include box-sizing(border-box);
+		height: 250px;
+		margin: 0 auto;
+		padding: 0 20px;
+		position: relative;
+		width: 500px;
+		vertical-align: middle;
+		
+		&.stuck {
+			left: 50%;
+			margin: 0 0 0 -250px;
+			position: fixed;
+			top: 0;
+		}
+			
+		&.regular {
+			@include background(none);
 		}
 		
 		&.flush {
-			background: #C33B49;
 			
 			p,
 			code {
@@ -62,7 +132,6 @@ body {
 		}
 		
 		&.buffer {
-			background: #2C2141;
 			
 			p,
 			code {
@@ -74,57 +143,20 @@ body {
 			}
 			
 		}
-		
-		&.css {
-			background: white;
-			height: 500px;
-		}
-		
-		.sticky {
-			@include background(rgba(0,0,0,0.3));
-			@include box-sizing(border-box);
-			height: 250px;
-			margin: 0 auto;
-			padding: 0 20px;
-			position: relative;
-			width: 500px;
-			vertical-align: middle;
-			
-			&.stuck {
-				left: 50%;
-				margin: 0 0 0 -250px;
-				position: fixed;
-				top: 0;
-			}
-				
-			&.regular {
-				@include background(none);
-			}
-			
-			&.flush {
-				
-				p,
-				code {
-					color: white;
-				}
-				
-			}
-			
-			&.buffer {
-				
-				p,
-				code {
-					color: white;
-				}
-				
-				&.stuck {
-					top: 50px;
-				}
-				
-			}
 
-		}
-		
+	}
+	
+}
+
+.control {
+	height: 300px;
+	font-size: 11px;
+	margin: 0 auto;
+	width: 500px;
+	text-align: center;
+	
+	input {
+		margin-right: 10px;
 	}
 	
 }
