@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sticky</title>
+		<link rel="stylesheet" href="demo.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="demos">
+				<div class="sticky regular">
+					<h1>Sticky</h1>
+					<h2>jQuery plugin for making things stick</h2>
+					<p>Elements get stuck as you scroll</p>
+					<pre><code>$(element).Sticky();</code></pre>
+					<p>A regular call to Sticky will keep the element fixed as long as your scrollTop is below its starting point</p>
+				</div>
+			</div>
+			<div class="demos">
+				<div class="sticky unsticky">
+					<p>They can get unstuck when they've traveled their own height</p>
+					<pre><code>$(element).Sticky({ bottom : true });</code></pre>
+				</div>
+			</div>
+			<div class="demos another-element">
+				<div class="sticky unsticky-two">
+					<p>Or they can get unstuck when they reach the bottom of their container element</p>
+					<pre><code>
+$(element).Sticky({ bottom : true,
+                    reference : $(container) });</code></pre>
+				</div>
+			</div>
+			<div class="demos flush">
+				<div class="sticky flush">
+					<p>Usually they can sit flush against the top of the window</p>
+				</div>
+			</div>
+			<div class="demos buffer">		
+				<div class="sticky buffer">
+					<p>But you can also give them a buffer</p>
+					<pre><code>
+$(element).Sticky({ bottom : true,
+                    reference : $(container),
+                    buffer : 50 });</code></pre>
+				</div>
+			</div>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="../sticky.js"></script>
+		<script>
+		$('.sticky.regular').Sticky();
+		$('.sticky.unsticky').Sticky({ bottom : true });
+		$('.sticky.unsticky-two').Sticky({ bottom : true, reference : $('.another-element') });
+		$('.sticky.flush').Sticky({ bottom : true, reference : $('.demos.flush') });
+		$('.sticky.buffer').Sticky({ bottom : true, reference : $('.demos.buffer'), buffer : 50 });
+		</script>
+	</body>
+</html>
