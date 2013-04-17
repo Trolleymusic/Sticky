@@ -13,7 +13,7 @@ Or you can specify a reference and they will get unstuck when they reach the bot
 
 	$(element).Sticky({ bottom : true, reference : $(container) });
 
-At the moment it has to be an element with a common ancestor, or an ancestor.
+At the moment the reference has to be an element with a common ancestor, or an ancestor.
 
 Usually the element will sit flush against the top of the window but you can specify a buffer:
 
@@ -31,7 +31,7 @@ But something needs to be there. The only positioning that sticky does at the mo
 
 ## Demo
 
-There's a demo in the /demo folder!
+There's a demo in the /demo folder and [waynedurack.com/Sticky](http://waynedurack.com/Sticky).
 
 
 
