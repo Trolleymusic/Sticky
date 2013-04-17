@@ -9,14 +9,13 @@
 		<div class="main">
 			<div class="demos">
 				<div class="sticky regular">
-					<h1>Sticky</h1>
+					<h1><a href="https://github.com/Trolleymusic/Sticky">Sticky</a></h1>
 					<h2>jQuery plugin for making things stick</h2>
-					<p>Elements get stuck as you scroll</p>
+					<p>Elements get stuck as you scroll. A regular call to Sticky will keep the element fixed as long as your scrollTop is greater than its initial offset on the page.</p>
 					<pre><code>$(element).Sticky();</code></pre>
-					<p>A regular call to Sticky will keep the element fixed as long as your scrollTop is below its starting point</p>
 				</div>
 			</div>
-			<div class="demos">
+			<div class="demos unsticky">
 				<div class="sticky unsticky">
 					<p>They can get unstuck when they've traveled their own height</p>
 					<pre><code>$(element).Sticky({ bottom : true });</code></pre>
@@ -42,6 +41,13 @@ $(element).Sticky({ bottom : true,
 $(element).Sticky({ bottom : true,
                     reference : $(container),
                     buffer : 50 });</code></pre>
+				</div>
+			</div>
+			<div class="demos css">		
+				<div class="sticky css">
+					<p>Sticky's not CSS independent at the moment. Sticky will add/remove whichever class you specify, and also fix the element's bottom positioning if the bottom flag is used but you also need to include the following css:</p>
+					<pre><code>.stuck { position : fixed; top : 0; }</code></pre>
+					<p><code>stuck</code> is the default keyword, but you can use a different one by including <code>keyword : &quot;whatever&quot;</code> in the settings object when you call Sticky.</p>
 				</div>
 			</div>
 		</div>

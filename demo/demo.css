@@ -1,96 +1,23 @@
-/* line 3, demo.scss */
-body {
-  font-family: sans-serif;
-}
+body { font-family: sans-serif; margin: 0; padding: 0; }
 
-/* line 7, demo.scss */
-.main {
-  width: 500px;
-  margin: 0 auto;
-  min-height: 5000px;
-  padding: 50px 0 0 0;
-  position: relative;
-}
-/* line 14, demo.scss */
-.main .demos {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 0 0 3px black;
-  -moz-box-shadow: 0 0 0 3px black;
-  box-shadow: 0 0 0 3px black;
-  display: block;
-  height: 700px;
-  margin: 0 0 50px 0;
-  padding: 0;
-  position: relative;
-  width: 100%;
-}
-/* line 25, demo.scss */
-.main .demos h1,
-.main .demos p {
-  margin-top: 0;
-  padding: 50px 0 0 0;
-}
-/* line 30, demo.scss */
-.main .demos code {
-  display: block;
-  font-size: 14px;
-  text-align: left;
-  width: 100%;
-}
-/* line 37, demo.scss */
-.main .demos.buffer {
-  padding: 50px 0;
-}
-/* line 41, demo.scss */
-.main .demos .sticky {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 250px;
-  margin: 0;
-  padding: 0 20px;
-  position: relative;
-  width: 500px;
-  vertical-align: middle;
-}
-/* line 50, demo.scss */
-.main .demos .sticky.stuck {
-  position: fixed;
-  top: 0;
-}
-/* line 55, demo.scss */
-.main .demos .sticky.unsticky {
-  background: #E5EAAA;
-}
-/* line 59, demo.scss */
-.main .demos .sticky.unsticky-two {
-  background: #FF776F;
-}
-/* line 63, demo.scss */
-.main .demos .sticky.flush {
-  background: #C33B49;
-}
-/* line 67, demo.scss */
-.main .demos .sticky.flush p,
-.main .demos .sticky.flush code {
-  color: white;
-}
-/* line 73, demo.scss */
-.main .demos .sticky.buffer {
-  background: #2C2141;
-}
-/* line 77, demo.scss */
-.main .demos .sticky.buffer p,
-.main .demos .sticky.buffer code {
-  color: white;
-}
-/* line 81, demo.scss */
-.main .demos .sticky.buffer.stuck {
-  top: 50px;
-}
-/* line 89, demo.scss */
-.main .demos:nth-child(2n) {
-  text-align: right;
-}
+.main { margin: 0 auto; min-height: 5000px; padding: 0; position: relative; }
+.main .demos { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-shadow: 0 0 0 3px black; -moz-box-shadow: 0 0 0 3px black; box-shadow: 0 0 0 3px black; display: block; height: 700px; margin: 0; padding: 0; position: relative; width: 100%; }
+.main .demos h1, .main .demos p { margin-top: 0; }
+.main .demos h1:first-child, .main .demos p:first-child { padding: 50px 0 0 0; }
+.main .demos a { color: black; }
+.main .demos code { font-size: 14px; width: 100%; }
+.main .demos.buffer { padding: 50px 0; }
+.main .demos.unsticky { background: #E5EAAA; }
+.main .demos.another-element { background: #FF776F; }
+.main .demos.flush { background: #C33B49; }
+.main .demos.flush p, .main .demos.flush code { color: white; }
+.main .demos.buffer { background: #2C2141; }
+.main .demos.buffer p, .main .demos.buffer code { color: white; }
+.main .demos.buffer.stuck { top: 50px; }
+.main .demos.css { background: white; height: 500px; }
+.main .demos .sticky { background: rgba(0, 0, 0, 0.3); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 250px; margin: 0 auto; padding: 0 20px; position: relative; width: 500px; vertical-align: middle; }
+.main .demos .sticky.stuck { left: 50%; margin: 0 0 0 -250px; position: fixed; top: 0; }
+.main .demos .sticky.regular { background: none; }
+.main .demos .sticky.flush p, .main .demos .sticky.flush code { color: white; }
+.main .demos .sticky.buffer p, .main .demos .sticky.buffer code { color: white; }
+.main .demos .sticky.buffer.stuck { top: 50px; }

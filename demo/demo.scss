@@ -1,14 +1,15 @@
-@import "compass";
+@import "compass"; 
 
 body {
 	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 .main {
-	width: 500px;
 	margin: 0 auto;
 	min-height: 5000px;
-	padding: 50px 0 0 0;
+	padding: 0;
 	position: relative;
 	
 	.demos {
@@ -16,7 +17,7 @@ body {
 		@include box-shadow(0 0 0 3px black);
 		display: block;
 		height: 700px;
-		margin: 0 0 50px 0;
+		margin: 0;
 		padding: 0;
 		position: relative;
 		width: 100%;
@@ -24,13 +25,17 @@ body {
 		h1,
 		p {
 			margin-top: 0;
-			padding: 50px 0 0 0;
+			&:first-child {
+				padding: 50px 0 0 0;
+			}
+		}
+		
+		a {
+			color: black;
 		}
 		
 		code {
-			display: block;
 			font-size: 14px;
-			text-align: left;
 			width: 100%;
 		}
 				
@@ -38,30 +43,65 @@ body {
 			padding: 50px 0;
 		}
 		
+		&.unsticky {
+			background: #E5EAAA;
+		}
+		
+		&.another-element {
+			background: #FF776F;
+		}
+		
+		&.flush {
+			background: #C33B49;
+			
+			p,
+			code {
+				color: white;
+			}
+			
+		}
+		
+		&.buffer {
+			background: #2C2141;
+			
+			p,
+			code {
+				color: white;
+			}
+			
+			&.stuck {
+				top: 50px;
+			}
+			
+		}
+		
+		&.css {
+			background: white;
+			height: 500px;
+		}
+		
 		.sticky {
+			@include background(rgba(0,0,0,0.3));
 			@include box-sizing(border-box);
 			height: 250px;
-			margin: 0;
+			margin: 0 auto;
 			padding: 0 20px;
 			position: relative;
 			width: 500px;
 			vertical-align: middle;
 			
 			&.stuck {
+				left: 50%;
+				margin: 0 0 0 -250px;
 				position: fixed;
 				top: 0;
 			}
-					
-			&.unsticky {
-				background: #E5EAAA;
-			}
-			
-			&.unsticky-two {
-				background: #FF776F;
+				
+			&.regular {
+				@include background(none);
 			}
 			
 			&.flush {
-				background: #C33B49;
 				
 				p,
 				code {
@@ -71,7 +111,6 @@ body {
 			}
 			
 			&.buffer {
-				background: #2C2141;
 				
 				p,
 				code {
@@ -84,10 +123,6 @@ body {
 				
 			}
 
-		}
-		
-		&:nth-child(2n) {
-			text-align: right;
 		}
 		
 	}
