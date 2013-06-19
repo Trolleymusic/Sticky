@@ -109,7 +109,7 @@
 				
 				S = this;
 				
-				// Recalc after window resize				
+				// Recalc after window resize
 				$(window).on('resize', function () {
 					S.CalculateOffsets(buffer, reference);
 					scrollFn();
@@ -124,7 +124,6 @@
 				_offsetTopH = _offsetTop + _element.height();
 				
 				if (reference && reference.length && reference.height()) {
-					//_offsetTopH = _offsetTop + reference.height() + reference.offset().top - _element.height();
 					_offsetTopH = reference.height() + reference.offset().top - _element.height();
 				}
 				_force = [buffer, reference];
