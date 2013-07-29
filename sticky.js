@@ -10,15 +10,16 @@
 				_force;
 				
 			this.Init = function(element, settings) {
-				var keyword,
-					buffer,
+				var animate,
 					bottom,
-					reference,
-					touch,
+					breakpoint,
+					buffer,
 					dimensions,
 					justmark,
+					keyword,
 					onupdate,
-					breakpoint,
+					reference,
+					touch,
 					parentHeight,
 					scrollFn,
 					S;
@@ -28,16 +29,24 @@
 				_element = element;
 				
 				settings = settings || {};
-					
-				keyword = settings.keyword || 'stuck';
-				buffer = settings.buffer || 0;
+				
+				animate = Modernizr.csstransitions ? 0 : (settings.animate || 0);
 				bottom = settings.bottom || false;
-				reference = settings.reference || null;
-				touch = settings.touch || true;
+				breakpoint = settings.breakpoint || 720;
+				buffer = settings.buffer || 0;
 				dimensions = settings.dimensions || false;
 				justmark = settings.justmark || false;
+				keyword = settings.keyword || 'stuck';
 				onupdate = settings.onupdate || function () {};
-				breakpoint = settings.breakpoint || 720;
+				reference = settings.reference || null;
+				touch = settings.touch || true;
+
+				if (animate) {
+					// Object goes into the addClass and removeClass functions in jQueryUI
+					//	this provides a simple way to animate if there's no csstransitions
+					animate = { duration: animate, children: true };
+					console.log(animate);
+				}
 			
 				this.CalculateOffsets(buffer, reference)
 
@@ -56,7 +65,7 @@
 					// Includes bottom
 					if (((scrollTop >= _offsetTop && scrollTop <= _offsetTopH) && !_is) && brokepoint) {
 						if (dimensions) { _element.css({ 'width' : _element.width(), 'height' : _element.height() }); }
-						_element.addClass(keyword).removeClass('bottom');
+						_element.addClass(keyword, animate).removeClass('bottom', animate);
 						_is = true;
 						_element.attr('data-stuck', 'fixed')
 								.css({'top':''});
@@ -64,14 +73,14 @@
 					} else if ((scrollTop < _offsetTop && _is) || !brokepoint) {
 						// This is in two because we want to make it stick to the bottom if
 						//	we've scrolled to the bottom, otherwise we want to leave it up the top
-						_element.removeClass(keyword);
+						_element.removeClass(keyword, animate);
 						_is = false;
 						_element.removeAttr('data-stuck')
 								.css({'top':''});
 						if (dimensions) { _element.css({ 'width' : '', 'height' : '' }); }
 						onupdate.apply(this);
 					} else if ((scrollTop > _offsetTopH && _is) && breakpoint) {
-						_element.removeClass(keyword).addClass('bottom');
+						_element.removeClass(keyword, animate).addClass('bottom', animate);
 						_is = false;
 						// Stick it to the bottom
 						_element.attr('data-stuck', 'bottom')
@@ -83,12 +92,12 @@
 					// Regular
 					if ($(this).scrollTop() >= _offsetTop && !_is && brokepoint) {
 						if (dimensions) { _element.css({ 'width' : _element.width(), 'height' : _element.height() }); }
-						_element.addClass(keyword);
+						_element.addClass(keyword, animate);
 						_is = true;
 						onupdate.apply(this);
 					} else if (($(this).scrollTop() < _offsetTop && _is) || !brokepoint) {
 						if (dimensions) { _element.css({ 'width' : '', 'height' : '' }); }
-						_element.removeClass(keyword);
+						_element.removeClass(keyword, animate);
 						_is = false;
 						onupdate.apply(this);
 					}
